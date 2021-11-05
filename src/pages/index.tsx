@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           href="/images/favicon-32x32.png"
         />
 
-        <title>Frontend Mentor | Order summary card</title>
+        <title>Order Summary Card</title>
       </Head>
       Order Summary You can now listen to millions of songs, audiobooks, and
       podcasts on any device anywhere you like! Annual Plan $59.99/year Change
