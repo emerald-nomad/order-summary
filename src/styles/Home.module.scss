@@ -1,0 +1,121 @@
+$min-width: 376px;
+@mixin media {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+.main {
+  padding-top: 5em;
+}
+
+.background {
+  &__mobile {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+
+    @include media() {
+      display: none;
+    }
+  }
+
+  &__desktop {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+
+    @include media() {
+      display: block;
+    }
+  }
+}
+
+.section {
+  z-index: 10;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(90%, 30em);
+  margin: auto;
+  border-radius: 1em;
+  text-align: center;
+  background-color: white;
+
+  &__content {
+    margin: 1em 0;
+    padding: 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+
+    @include media {
+      margin: 3em 0;
+      padding: 0 3em;
+      gap: 1.75em;
+    }
+  }
+
+  &__plan {
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+    padding: 1.25em 1em;
+    border-radius: 1em;
+    background-color: var(--very-pale-blue);
+
+    .img-container {
+      --img-size: 3em;
+      height: var(--img-size);
+      width: var(--img-size);
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column;
+
+      span:first-child {
+        font-weight: 700;
+      }
+
+      span:last-child {
+        color: var(--desaturated-blue);
+        font-size: 0.9rem;
+      }
+    }
+
+    a {
+      margin-left: auto;
+    }
+  }
+
+  &__payment {
+    cursor: pointer;
+    background-color: var(--bright-blue);
+    color: white;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1em 1em;
+    border-radius: 0.75em;
+  }
+
+  &__cancel {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--desaturated-blue);
+  }
+
+  h1 {
+    color: var(--dark-blue);
+  }
+
+  p {
+    color: var(--desaturated-blue);
+
+    @include media {
+      padding: 0 1em;
+    }
+  }
+}
